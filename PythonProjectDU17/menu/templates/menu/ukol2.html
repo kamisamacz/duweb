@@ -1,0 +1,45 @@
+{% extends 'menu/base.html' %}
+
+{% block title %}Úkol 2 - Výběr kategorie{% endblock %}
+
+{% block content %}
+    <h1>Formulář na výběr kategorie</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Hlavní dropdown menu -->
+        <label for="kategorie">Vyber kategorii:</label>
+        <select name="kategorie" id="kategorie" onchange="this.form.submit()">
+            <option value="Filmy" {% if kategorie == "Filmy" %}selected{% endif %}>Filmy</option>
+            <option value="Knihy" {% if kategorie == "Knihy" %}selected{% endif %}>Knihy</option>
+            <option value="Hry" {% if kategorie == "Hry" %}selected{% endif %}>Hry</option>
+        </select>
+
+        <!-- Druhé dropdown menu pro výběr žánru (zobrazí se podle kategorie) -->
+        {% if kategorie == "Filmy" or kategorie == "Knihy" or kategorie == "Hry" %}
+            <label for="zanr">Vyber žánr:</label>
+            <select name="zanr" id="zanr" onchange="this.form.submit()">
+                <option value="">Všechny žánry</option>
+                {% for z in vsechny_zanry %}
+                    <option value="{{ z }}" {% if zanr == z %}selected{% endif %}>{{ z }}</option>
+                {% endfor %}
+            </select>
+        {% endif %}
+    </form>
+
+    <h3>Vybraná kategorie: <strong>{{ kategorie }}</strong></h3>
+    {% if zanr %}
+        <h4>Žánr: <strong>{{ zanr }}</strong></h4>
+    {% endif %}
+
+    {% if data %}
+        <ul>
+            {% for item in data %}
+                <li><strong>{{ item.nazev }}</strong> ({{ item.rok }})</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Žádné výsledky k zobrazení.</p>
+    {% endif %}
+{% endblock %}

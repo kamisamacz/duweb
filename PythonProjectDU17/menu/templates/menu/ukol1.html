@@ -1,0 +1,19 @@
+{% extends 'menu/base.html' %}
+
+{% block title %}Úkol 1 - GET parametr{% endblock %}
+
+{% block content %}
+    <h1>Odeslání GET parametru přes URL</h1>
+
+    <p><strong>Výsledná hodnota GET parametru:</strong> {{ jmeno }}</p>
+
+    <h3>Zkus kliknout na tyto odkazy:</h3>
+    <nav2>
+
+    <ul>
+        <li><a href="{% url 'ukol1' %}?jmeno=Petr">Odeslat jméno "Petr"</a></li>
+        <li><a href="{% url 'ukol1' %}?jmeno=Anna">Odeslat jméno "Anna"</a></li>
+        <li><a href="{% url 'ukol1' %}?jmeno=David">Odeslat jméno "David"</a></li>
+    </ul>
+    </nav2>
+{% endblock %}

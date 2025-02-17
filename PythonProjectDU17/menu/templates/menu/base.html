@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Moje stránka{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'menu/style.css' %}">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Domů</a></li>
+            <li><a href="{% url 'ukol1' %}">DU 1</a></li>
+            <li><a href="{% url 'ukol2' %}">DU 2</a></li>
+            <li><a href="{% url 'ukol3' %}">DU 3</a></li>
+            <li><a href="{% url 'ukol4' %}">DU 4</a></li>
+            <li><a href="{% url 'ukol5' %}">DU 5</a></li>
+            <li><a href="{% url 'vysledky' %}">Výsledky</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

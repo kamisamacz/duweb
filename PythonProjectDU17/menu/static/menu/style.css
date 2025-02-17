@@ -1,0 +1,108 @@
+/* Celá stránka */
+body {
+    font-family: 'TF2', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Navigační menu */
+nav {
+    background: rgba(51, 51, 51, 0.5); /* Poloprůhledná černá */
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+nav2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Zarovnání do středu */
+    gap: 5px; /* Mezera mezi tlačítky */
+    min-width: 600x;
+}
+
+/* Odkazy v menu jako tlačítka */
+nav2 ul li a {
+    display: inline-block;
+    background: #444444;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    text-align: center;
+    white-space: nowrap;
+
+    /* Pevná šířka, aby se tlačítka neroztahovala */
+    min-width: 80px;  /* Zajišťuje konzistentní velikost */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Přechod pro plynulou změnu */
+    transition: background 0.5s ease-out, color 0.6s ease-out, border-radius 0.5s ease-in-out, font-weight 0.6s ease-in-out;
+}
+/* Seznam odkazů v menu */
+nav2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Zarovnání do středu */
+    gap: 5px; /* Mezera mezi tlačítky */
+    min-width: 600x;
+}
+
+
+/* Seznam odkazů v menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Zarovnání do středu */
+    gap: 5px; /* Mezera mezi tlačítky */
+    min-width: 600x;
+}
+
+/* Odkazy v menu jako tlačítka */
+nav ul li a {
+    display: inline-block;
+    background: #444444;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    text-align: center;
+    white-space: nowrap;
+
+    /* Pevná šířka, aby se tlačítka neroztahovala */
+    min-width: 80px;  /* Zajišťuje konzistentní velikost */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Přechod pro plynulou změnu */
+    transition: background 0.5s ease-out, color 0.6s ease-out, border-radius 0.5s ease-in-out, font-weight 0.6s ease-in-out;
+}
+
+/* Efekt po najetí myší */
+nav ul li a:hover {
+    background: white;
+    color: black;
+    border-radius: 25px;
+    font-weight: bold;
+
+    /* Aby font-weight nezvětšil velikost tlačítka */
+    min-width: 80px;
+}
+/* Posunutí hlavního obsahu pod menu */
+main {
+    margin-top: 80px; /* Přidává dostatečnou mezeru pod menu */
+    padding: 20px;
+}
