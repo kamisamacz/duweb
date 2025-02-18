@@ -1,8 +1,24 @@
 {% extends 'menu/base.html' %}
 
-{% block title %}DU 3{% endblock %}
+{% block title %}Úkol 3 - Odeslání zpětné vazby{% endblock %}
 
 {% block content %}
-    <h1>DU 3</h1>
-    <p>DU  3...</p>
+    <center><h1>Odeslání zpětné vazby</h1></center>
+
+    {% if success %}
+        <p>Thank you, {{ name }}! Your feedback has been submitted successfully.</p>
+    {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="name">Your Name : </label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="message">Your Message : </label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
 {% endblock %}

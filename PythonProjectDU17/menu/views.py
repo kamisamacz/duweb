@@ -1,5 +1,31 @@
-from django.shortcuts import render
-from .models import Film, Kniha, Hra
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.views import View
+from .forms import ContactForm
+from .models import Film, Kniha, Hra  # Přidej modely, které používáš
+from .forms import FeedbackForm  # Přidej import pro FeedbackForm
+
+
+
+
+class ContactView(View):
+    def get(self, request):
+        # Zobrazení formuláře pro kontaktování
+        form = ContactForm()
+        return render(request, 'menu/ukol5.html', {'form': form})
+
+    def post(self, request):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Zpracování formuláře a výpis do konzole
+            name = form.cleaned_data['name']
+            message = form.cleaned_data['message']
+            print(f"Received message from {name}: {message}")
+
+            # Přesměrování na výchozí stránku (např. na home)
+            return redirect('home')  # Pokud chceš přesměrovat na domovskou stránku
+        return render(request, 'menu/ukol5.html', {'form': form})
+
 
 def home(request):
     return render(request, 'menu/home.html')
@@ -37,7 +63,18 @@ def ukol2(request):
         'vsechny_zanry': vsechny_zanry
     })
 
+def feedback_view(request):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            message = form.cleaned_data['message']
+            print(f"Received feedback from {name}: {message}")
+            return render(request, 'menu/ukol3.html', {'name': name, 'success': True})
+    else:
+        form = FeedbackForm()
 
+    return render(request, 'menu/ukol3.html', {'form': form, 'success': False})
 
 def ukol3(request):
     return render(request, 'menu/ukol3.html')

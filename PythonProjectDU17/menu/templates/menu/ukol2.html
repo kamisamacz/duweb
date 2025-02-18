@@ -3,7 +3,7 @@
 {% block title %}Úkol 2 - Výběr kategorie{% endblock %}
 
 {% block content %}
-    <h1>Formulář na výběr kategorie</h1>
+    <center><h1>Formulář na výběr kategorie</h1>
 
     <form method="POST">
         {% csrf_token %}
@@ -41,5 +41,6 @@
         </ul>
     {% else %}
         <p>Žádné výsledky k zobrazení.</p>
+    </center>
     {% endif %}
 {% endblock %}

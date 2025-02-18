@@ -1,8 +1,12 @@
 {% extends 'menu/base.html' %}
-
-{% block title %}DU 4{% endblock %}
+{% load static %}
+{% block title %}Úkol 4 - Statická stránka{% endblock %}
 
 {% block content %}
-    <h1>DU 4</h1>
-    <p>DU 4...</p>
+<center><h1>Vítejte na statické stránce!</h1>
+<p>Toto je jednoduchá statická stránka zobrazená pomocí TemplateView v Django.</p>
+
+<!-- Přidání obrázku -->
+<a href="https://www.instagram.com/kamisamacz/"><img src="{% static 'menu/images/obrazek.png' %}" alt="Obrázek na stránce" style="max-width: 100%; height: auto;">
+</a></center>
 {% endblock %}
