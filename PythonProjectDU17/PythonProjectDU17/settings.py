@@ -12,7 +12,11 @@ SECRET_KEY = 'django-insecure-i(!qx5o5mh!3t-9m&9hvlx4bc^03lk%)!j%hn)a6y&79y#e1^m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'duweb-production.up.railway.app']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://duweb-production.up.railway.app',
+]
 
 # Nastavení pro statické soubory
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Umístění pro sbírané statické soubory
