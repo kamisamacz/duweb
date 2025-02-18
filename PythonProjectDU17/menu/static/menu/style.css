@@ -233,4 +233,20 @@ nav2 ul {
         margin: 2px 2px;
         font-size: 22px; /* Snížení velikosti textu na tlačítkách pro mobil */
     }
+
+
+}
+
+/* Efekt změny pozadí při najetí na obrázek */
+img {
+    cursor: pointer; /* Ukazatel na rukou */
+}
+
+/* Při najetí na obrázek */
+img:hover {
+    background-color: lightblue;
+}
+
+img:hover ~ body {
+    background-color: lightblue; /* Pozadí celé stránky se změní při hoveru na obrázek */
 }
