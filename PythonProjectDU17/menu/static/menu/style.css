@@ -8,8 +8,6 @@
     font-style: normal;
 }
 
-
-
 /* Celá stránka */
 body {
     font-family: 'TF2', sans-serif !important; /* Použití fontu TF2 */
@@ -17,6 +15,9 @@ body {
     margin: 0;
     padding: 0;
     text-align: left;
+    max-width: 720px; /* Omezí maximální šířku stránky */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Navigační menu */
@@ -137,6 +138,8 @@ form label {
     text-align: left;
     width: 100%;
 }
+
+/* Odkazy v menu jako tlačítka pro mobilní verzi */
 nav2 {
     list-style: none;
     padding: 0;
@@ -147,7 +150,7 @@ nav2 {
     min-width: 600x;
 }
 
-/* Odkazy v menu jako tlačítka */
+/* Odkazy v menu */
 nav2 ul li a {
     display: inline-block;
     background: #444444;
@@ -167,6 +170,7 @@ nav2 ul li a {
     /* Přechod pro plynulou změnu */
     transition: background 0.5s ease-out, color 0.6s ease-out, border-radius 0.5s ease-in-out, font-weight 0.6s ease-in-out;
 }
+
 /* Seznam odkazů v menu */
 nav2 ul {
     list-style: none;
@@ -178,17 +182,55 @@ nav2 ul {
     min-width: 600x;
 }
 
-/* Efekt změny pozadí při najetí na obrázek */
-img {
-    cursor: pointer; /* Ukazatel na rukou */
-}
+/* Responsive úpravy pro mobilní zařízení */
+@media (max-width: 720px) {
+    /* Zmenšení tlačítek a menu pro mobilní zařízení */
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tři tlačítka na řádek */
+        gap: 2px; /* Menší mezery mezi tlačítky */
+        padding: 1px 1px; /* Padding z obou stran pro správné zarovnání */
+    }
 
-/* Při najetí na obrázek */
-img:hover {
-    /* Změní pozadí na světle modrou */
-    background-color: lightblue;
-}
+    nav ul li a {
+        display: block;
+        padding: 1px 1px; /* Snížení paddingu pro menší tlačítka */
+        margin: 1px 1px;
+        font-size: 18px; /* Snížení velikosti textu na tlačítkách pro mobil */
+    }
 
-img:hover ~ body {
-    background-color: lightblue; /* Pozadí celé stránky se změní při hoveru na obrázek */
+    body {
+        font-size: 12px; /* Snížení velikosti textu */
+        padding: 30px;
+    }
+
+    form {
+        width: 90%; /* Zajistí, že formulář nebude širší než 90% obrazovky */
+        padding: 5px;
+        margin:3px auto;
+    }
+
+    form button {
+        padding: 10px 10px;
+    }
+
+    form input, form select, form textarea {
+        font-size: 14px;
+        padding: 14px;
+    }
+    /*
+    /* Zmenšení tlačítek a menu pro mobilní zařízení */
+    nav2 ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Tři tlačítka na řádek */
+        gap: 2px; /* Menší mezery mezi tlačítky */
+        padding: 1px 1px; /* Padding z obou stran pro správné zarovnání */
+    }
+
+    nav2 ul li a {
+        display: block;
+        padding: 1px 1px; /* Snížení paddingu pro menší tlačítka */
+        margin: 2px 2px;
+        font-size: 22px; /* Snížení velikosti textu na tlačítkách pro mobil */
+    }
 }

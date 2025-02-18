@@ -1,4 +1,5 @@
 {% extends 'menu/base.html' %}
+{% load static %}
 
 {% block title %}Úkol 1 - GET parametr{% endblock %}
 
@@ -9,11 +10,10 @@
 
     <h3>Zkus kliknout na tyto odkazy:</h3> </center>
     <nav2>
-
-    <ul>
-        <li><a href="{% url 'ukol1' %}?jmeno=Petr">Odeslat jméno "Petr"</a></li>
-        <li><a href="{% url 'ukol1' %}?jmeno=Anna">Odeslat jméno "Anna"</a></li>
-        <li><a href="{% url 'ukol1' %}?jmeno=David">Odeslat jméno "David"</a></li>
-    </ul>
+        <ul>
+            <li><a href="{% url 'ukol1' %}?jmeno=Petr">Odeslat jméno "Petr"</a></li>
+            <li><a href="{% url 'ukol1' %}?jmeno=Anna">Odeslat jméno "Anna"</a></li>
+            <li><a href="{% url 'ukol1' %}?jmeno=David">Odeslat jméno "David"</a></li>
+        </ul>
     </nav2>
 {% endblock %}
