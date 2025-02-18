@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'TF2';
+    src: url('{% static "menu/fonts/TF2.woff2" %}') format('woff2'),
+         url('{% static "menu/fonts/TF2.woff" %}') format('woff'),
+         url('{% static "menu/fonts/TF2.ttf" %}') format('truetype');
+         url('{% static "./menu/fonts/TF2.ttf" %}') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* Celá stránka */
+body {
+    font-family: 'TF2', sans-serif !important; /* Použití fontu TF2 */
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/* Navigační menu */
+nav {
+    background: rgba(51, 51, 51, 0.5); /* Poloprůhledná černá */
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Odkazy v menu jako tlačítka */
+nav ul li a {
+    font-family: 'TF2', sans-serif; /* Použití fontu TF2 na odkazy v menu */
+    display: inline-block;
+    background: #444444;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 100px;
+    transition: background 0.3s ease-out, color 0.3s ease-out, border-radius 0.3s ease-in-out;
+}
+
+/* Efekt po najetí myší */
+nav ul li a:hover {
+    background: white;
+    color: black;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* Posunutí hlavního obsahu pod menu */
+main {
+    margin-top: 120px; /* Zvětšíme mezeru pod menu */
+    padding: 20px;
+}
+
+/* Formulář na stránce ukol3 */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Políčka pro zadání textu */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+/* Efekt na textová pole po najetí */
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Textarea pro zprávy */
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Tlačítko pro odeslání formuláře */
+form button {
+    font-family: 'TF2', sans-serif;
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efekt na tlačítko po najetí */
+form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Titulky formuláře */
+form label {
+    font-family: 'TF2', sans-serif; /* Použití fontu TF2 na popisky formuláře */
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+nav2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Zarovnání do středu */
+    gap: 5px; /* Mezera mezi tlačítky */
+    min-width: 600x;
+}
+
+/* Odkazy v menu jako tlačítka */
+nav2 ul li a {
+    display: inline-block;
+    background: #444444;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    text-align: center;
+    white-space: nowrap;
+
+    /* Pevná šířka, aby se tlačítka neroztahovala */
+    min-width: 80px;  /* Zajišťuje konzistentní velikost */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Přechod pro plynulou změnu */
+    transition: background 0.5s ease-out, color 0.6s ease-out, border-radius 0.5s ease-in-out, font-weight 0.6s ease-in-out;
+}
+/* Seznam odkazů v menu */
+nav2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Zarovnání do středu */
+    gap: 5px; /* Mezera mezi tlačítky */
+    min-width: 600x;
+}
+
+/* Efekt změny pozadí při najetí na obrázek */
+img {
+    cursor: pointer; /* Ukazatel na rukou */
+}
+
+/* Při najetí na obrázek */
+img:hover {
+    /* Změní pozadí na světle modrou */
+    background-color: lightblue;
+}
+
+img:hover ~ body {
+    background-color: lightblue; /* Pozadí celé stránky se změní při hoveru na obrázek */
+}
